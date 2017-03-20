@@ -34,7 +34,7 @@ $(document).ready(function() {
         database.ref().push(train);
         console.log(train);
 
-        //empty form
+        //empty the form
         $("#train-name").val("");
         $("#destination").val("");
         $("#first-time").val("");
@@ -45,22 +45,22 @@ $(document).ready(function() {
     // At the initial load and whenever a new train is added.
     database.ref().on("child_added", function(snapshot) {
 
-        //math
+        //math for times
         var frequency = snapshot.val().frequency;
         var startTime = moment(snapshot.val().firstTime, "H:m");
 
-        //Set moment variables
+        //Set variables
         var timeFound = false;
         var nextArrival = startTime;
         var now = moment();
         var minutesAway;
 
-        //Get next arrival time
+        //Get the next train arrival time
         while (timeFound === false) {
             if (moment(nextArrival, "H:m", true).isValid()) {
                 if (nextArrival >= now) {
                     timeFound = true;
-                    //Get minutes until next arrival
+                    //Get the minutes until next train arrival
                     minutesAway = moment(nextArrival).diff(now, 'minutes');
                 } else {
                     nextArrival.add(frequency, 'm');
@@ -70,7 +70,7 @@ $(document).ready(function() {
             }
 
         }
-         //Create Row
+         //Create a new row for the train times
         var newRow = $('<tr data-name="' + snapshot.name + '">');
         newRow.append($('<td>' + snapshot.val().name + '</td>'));
         newRow.append($('<td>' + snapshot.val().destination + '</td>'));
@@ -79,7 +79,7 @@ $(document).ready(function() {
         newRow.append($('<td>' + minutesAway + '</td>'));
         newRow.append($('<td><button class="delete-row" data-row = "' + snapshot.getKey() + '"><span class="glyphicon glyphicon-remove"></span></button>'));
 
-        //Add to table
+        //Add to table for train times
         $('.table').append(newRow);
 
         // If any errors are experienced, log them to console.
