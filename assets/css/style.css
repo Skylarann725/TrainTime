@@ -1,0 +1,70 @@
+body {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-family: 'Passion One', cursive;
+	font-size: 100px;
+	margin-top: 5px;
+}
+
+h3 {
+	font-family: 'Passion One', cursive;
+}
+
+.title {
+	background-color: pink;
+	color: black;
+	text-align: center;
+	padding: 40px;
+	height: 200px;
+}
+
+.parameters {
+	background-color: pink;
+	color: black;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.search {
+	padding: 10px;
+	margin-top: 0px;
+	border: solid 1px pink;
+}
+
+.articleHeader {
+	background-color: pink;
+	color: black;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.trainArea {
+	border: solid 1px pink;
+}
+
+.article-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.url {
+	font-size: 10px;
+	color: lightslategray;
+}
+
+.resultsArea {
+	border: solid 1px pink;
+}
+
+.article-content {
+	background-color: lightgray;
+	padding: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.btn-default {
+	background-color: lightgray;
+}
